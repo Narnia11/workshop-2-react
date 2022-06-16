@@ -2,11 +2,16 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios  from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+//import {useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+
 
 
 function SavePerson() {
   
   const {register,handleSubmit,errors}=useForm();
+  //const history=useHistory();
+  const navigate = useNavigate();
 
   const onSubmit=(data)=>{
 
@@ -17,6 +22,9 @@ function SavePerson() {
     })
     .then(function (response) {
       console.log(response);
+     // history.go(-1);
+     //history.push('/CrudDemo');
+     navigate('/CrudDemo');
     })
     .catch(function (error) {
       console.log(error);

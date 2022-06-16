@@ -2,12 +2,7 @@ import React from 'react';
 import TableAction from './TeableAction';
 
 function TableRow(props) {
-  console.log('props:',props)
-  console.log('props obj :',props.obj)
-  console.log('props obj id :',props.obj.id)
-  console.log('props obj personName :',props.obj.personName)
-  console.log('props obj city :',props.obj.city)
-  console.log('props obj personPhoneNumber :',props.obj.personPhoneNumber)
+
   return (
     <tr >
     <th>{props.obj.id}</th>

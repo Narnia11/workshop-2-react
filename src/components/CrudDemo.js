@@ -4,9 +4,12 @@ import TableHeader from './TeableHeader';
 import TableRow from './TeableRow';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 
 function CrudDemo(props) {
   const navigate=useNavigate();
+  const location = useLocation();
+
 //it runs for firsttime ,due to having second parameter as empthy array
   useEffect(()=>{
     debugger;
@@ -17,8 +20,12 @@ axios.get('http://localhost:60359/api/person/getpersons').then((res)=>{
   setPersonList(ResponseData);
 
 })
-  },[])
+  },[location.state])
+
+    
+ 
   const [PersonList, setPersonList] = useState();
+  const [ShouldRefresh, setShouldRefresh] = useState(false);
 
   return (
     <div className="app">

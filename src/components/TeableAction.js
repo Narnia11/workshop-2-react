@@ -11,9 +11,10 @@ const handleClick = (e) => {
     
     const ResponseData=res.data;
     console.log('person deleted message :',ResponseData);
-    navigate('/CrudDemo/');
+    navigate('/CrudDemo/',{state:{refresh:true}});
 
-   
+
+   //navigate('/home');
    })
 };
 
